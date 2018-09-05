@@ -47,6 +47,14 @@ shopcar_dao dao;
 		// TODO Auto-generated method stub
 		return dao.count(sc);
 	}
+	public void plus(Shopcar sc) {
+		dao.plus(sc);
+		
+	}
+	public void minus(Shopcar sc) {
+		dao.minus(sc);
+		
+	}
 	
 
 }

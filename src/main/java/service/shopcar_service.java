@@ -14,4 +14,6 @@ public interface shopcar_service {
 	public List<Shopcar> Byids(Shopcar sc);
 	public List<Shopcar> sums(Shopcar sc);
 	public List<Shopcar> count(Shopcar sc);
+	 public void plus(Shopcar sc);
+	 public void minus(Shopcar sc);
 }

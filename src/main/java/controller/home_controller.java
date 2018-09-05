@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import entity.Product;
 import jsonInfo.jsonInfo;
+import jsonInfo.searchInfo;
 import service.product_service;
 import service.type_service;
 
@@ -52,7 +53,13 @@ public class home_controller {
 		return "home/search";
 		
 	}
-
+	@RequestMapping("searchname")
+	public String searchname(ModelMap m,searchInfo info) {
+        
+		
+		return "home/fullname";
+		
+	}
 	
 	
 	

@@ -13,6 +13,24 @@
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/carts.css">
 <script type="text/javascript">
+function plus(id){
+	var url="plus?id="+id;
+	$.ajax({
+		type:"post",
+		url:url,
+		timeout:1000,
+	})
+}
+function minus(id){
+	var url="minus?id="+id;
+	$.ajax({
+		type:"post",
+		url:url,
+		timeout:1000,
+	})
+}
+
+
 function goshopping(id) {
 	location.href="goshopping?id="+id;
 }
@@ -133,9 +151,9 @@ function pay(id,user_id){
                     </li>
                     <li class="list_amount" style="margin-left: -20px">
                         <div class="amount_box">
-                            <a href="javascript:;" class="reduce reSty">-</a>
+                            <a href="javascript:;" class="reduce reSty" onclick="minus(${r.id})">-</a>
                             <input type="text" value="${r.count}" class="sum">
-                            <a href="javascript:;" class="plus">+</a>
+                            <a href="javascript:;" class="plus" onclick="plus(${r.id})">+</a>
                         </div>
                     </li>
                     <li class="list_sum" style="margin-left: 5px">

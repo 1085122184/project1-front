@@ -20,4 +20,6 @@ public interface product_dao {
     @Select("select * from product where type_id=#{type_id}")
     public List<Product> Bytypeid(Product p);
     
+    
+    
 }

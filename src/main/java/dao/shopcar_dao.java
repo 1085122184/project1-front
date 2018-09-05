@@ -32,4 +32,8 @@ public interface shopcar_dao {
     
     @Select("select count(id) c from shopcar where user_id=#{user_id}")
     public List<Shopcar> count(Shopcar sc);
+    @Update("update shopcar set count=count+1 where id=#{id}")
+    public void plus(Shopcar sc);
+    @Update("update shopcar set count=count-1 where id=#{id}")
+    public void minus(Shopcar sc);
 }

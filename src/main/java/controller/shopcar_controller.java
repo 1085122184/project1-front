@@ -60,17 +60,28 @@ address_service addrservice;
 		service.del(sc);
 		return new  jsonInfo(1, "");
 	}
+	@RequestMapping("plus")
+	public @ResponseBody jsonInfo plus(Shopcar sc) {
+		service.plus(sc);
+		return new  jsonInfo(1, "");
+	}
+	@RequestMapping("minus")
+	public @ResponseBody jsonInfo minus(Shopcar sc) {
+		service.minus(sc);
+		return new  jsonInfo(1, "");
+	}
+	
 	@RequestMapping("pay")
 	public String pay(User u,ModelMap m,Address addr,Shopcar sc,String ids,String counts,String nowprices,String prices) {
 		m.put("ids", ids);
-		m.put("counts", counts);
-		m.put("nowprices",nowprices);
-		m.put("prices", prices);
-		m.put("user",uservice.selectByid(u).get(0));
-		m.put("address", addrservice.selectall(addr));
-		m.put("products",service.Byids(sc));
-		m.put("sums", service.sums(sc).get(0));
-		m.put("faultaddr", addrservice.selectBystatus(addr).get(0));
+//		m.put("counts", counts);
+//		m.put("nowprices",nowprices);
+//		m.put("prices", prices);
+//		m.put("user",uservice.selectByid(u).get(0));
+//		m.put("address", addrservice.selectall(addr));
+//		m.put("products",service.Byids(sc));
+//		m.put("sums", service.sums(sc).get(0));
+//		m.put("faultaddr", addrservice.selectBystatus(addr).get(0));
 		return "home/pay";
 	} 
 	@RequestMapping("order")

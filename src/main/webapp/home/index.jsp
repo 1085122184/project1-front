@@ -102,10 +102,10 @@ strong {
 
 			<div class="search-bar pr">
 				<a name="index_none_header_sysc" href="#"></a>
-				<form>
-					<input id="searchInput" name="index_none_header_sysc" type="text"
-						placeholder="搜索" autocomplete="off"> <input
-						id="ai-topsearch" class="submit am-btn" value="搜索" index="1"
+				<form action="searchname">
+					<input id="searchInput" name="txt" type="text"
+						placeholder="搜索" autocomplete="off"> 
+					<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1"
 						type="submit">
 				</form>
 			</div>
@@ -157,36 +157,17 @@ strong {
 				(function() {
 					$('.am-slider').flexslider();
 				});
-				$(document)
-						.ready(
-								function() {
-									$("li")
-											.hover(
-													function() {
-														$(
-																".category-content .category-list li.first .menu-in")
-																.css("display",
-																		"none");
-														$(
-																".category-content .category-list li.first")
-																.removeClass(
-																		"hover");
-														$(this).addClass(
-																"hover");
-														$(this)
-																.children(
-																		"div.menu-in")
-																.css("display",
-																		"block")
-													},
-													function() {
-														$(this).removeClass(
-																"hover")
-														$(this).children(
-																"div.menu-in")
-																.css("display",
-																		"none")
-													});
+				$(document).ready(function() {
+					$("li").hover(function() {
+								$(".category-content .category-list li.first .menu-in").css("display","none");
+								$(".category-content .category-list li.first").removeClass("hover");
+								$(this).addClass("hover");
+								$(this).children("div.menu-in").css("display","block")
+										   },
+				function() {
+							$(this).removeClass("hover")
+							$(this).children("div.menu-in").css("display","none")
+								});
 								})
 			</script>
 			<!--小导航 -->
