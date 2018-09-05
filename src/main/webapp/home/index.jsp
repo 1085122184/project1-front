@@ -552,9 +552,9 @@ strong {
 				</div>
 				<div class="clear "></div>
 			</div>
-			<jsp:include page="../basicjsp/basis_bottom1.jsp" ></jsp:include>
+			<jsp:include page="../basicjsp/basis_bottom.jsp" ></jsp:include>
 		</div>
 	</div>
-<jsp:include page="../basicjsp/basis_bottom.jsp" ></jsp:include>
+<jsp:include page="../basicjsp/basis_bottom1.jsp" ></jsp:include>
 
 </html>
