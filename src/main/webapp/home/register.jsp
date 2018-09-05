@@ -74,8 +74,6 @@
 							  	</div> 
 								</div>
 								<script>
-								
-								
 									$(function() {
 									    $('#doc-my-tabs').tabs();
 									    $("#useradd").validate({
