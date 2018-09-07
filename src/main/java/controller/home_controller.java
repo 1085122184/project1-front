@@ -21,7 +21,7 @@ public class home_controller {
     @Autowired
 	type_service tservice;
     
-    
+      
     
     @RequestMapping("page")
 	public String select(ModelMap m) {
