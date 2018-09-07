@@ -60,7 +60,7 @@ strong {
 			<ul class="message-r">
 				<div class="topMessage home">
 					<div class="menu-hd">
-						<a href="#" target="_top" class="h">商城首页</a>
+						<a href="../home/page" target="_top" class="h">商城首页</a>
 					</div>
 				</div>
 				<div class="topMessage my-shangcheng">
@@ -91,7 +91,7 @@ strong {
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>
@@ -207,7 +207,7 @@ strong {
 											<em style="font-size: 12px;"> ${p.fullname} </em>
 										</div>
 										<div>
-											<a href="addcar?user_id=${sessionScope.user.id}&product_id=${p.id}&count=1">
+											<a href="failedadd">
 												<i class="am-icon-shopping-cart am-icon-md  seprate"
 												style="position: absolute; top: 135px" title="加入购物车"></i> 
 												<i class="am-icon-heart-o am-icon-md  seprate"

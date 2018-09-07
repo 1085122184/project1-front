@@ -26,6 +26,16 @@ public class product_serviceImpl implements product_service{
 		return dao.Bytypeid(p);
 	}
 
+	public List<Product> Byids(Product p) {
+		// TODO Auto-generated method stub
+		return dao.Byids(p);
+	}
+
+	public void payment(Product p) {
+		dao.payment(p);
+		
+	}
+
 
 
 }

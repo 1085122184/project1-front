@@ -45,14 +45,14 @@
 				<div class="topMessage home">
 					<div class="menu-hd">
 					<c:if test="${sessionScope.user!=null}">
-						<a href="../home/index" target="_top" class="h">商城首页</a>
+						<a href="../home/page" target="_top" class="h">商城首页</a>
 					</c:if>	
 					</div>
 				</div>
 				<div class="topMessage my-shangcheng">
 				<c:if test="${sessionScope.user!=null}">
 					<div class="menu-hd MyShangcheng">
-						<a href="center?id=${sessionScope.user.id}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a>
+						<a href="../User/center?id=${sessionScope.user.id}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a>
 					</div>
 				</c:if>	
 				<c:if test="${sessionScope.user==null}">
@@ -77,7 +77,7 @@
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>
@@ -139,7 +139,7 @@
 								</p>
 							</div>
 							<div class="new-addr-btn">
-								<a href="#"><i class="am-icon-edit"></i>编辑</a> <span
+								<!--<a href="#"><i class="am-icon-edit"></i>编辑</a> --><span
 									class="new-addr-bar">|</span> <a href="javascript:void(0);"
 									onclick="del(${r.id});"><i class="am-icon-trash"></i>删除</a>
 							</div>
@@ -184,13 +184,15 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-					 <form action="order" method="post" class="orders">
-					 <input type="hidden" value="${requestScope.ids}" name="product_id" />
-					 <input type="hidden" value="${requestScope.counts}" name="count" />
-					 <input type="hidden" value="${requestScope.prices}" name="price" />
-					 <input type="hidden" value="${requestScope.nowprices}" name="nowprice" />
-					
-					 
+					 <form action="order?user_id=${sessionScope.user.id}" method="post" class="orders">
+					 <input type="hidden" value="${requestScope.faultaddr.id}" name="address_id" id="addrid"/>
+					 <input type="hidden" value="${sessionScope.pids}" name="product_id" />
+					 <input type="hidden" value="${requestScope.ids}" name="ids" />
+					 <input type="hidden" value="${sessionScope.counts}" name="countss" />
+					 <input type="hidden" value="${sessionScope.prices}" name="price" />
+					 <input type="hidden" value="${sessionScope.nowprices}" name="nprice" />
+					 <input type="hidden" value="${requestScope.sums.oldtotalmoney}" name="amount" />
+					 <input type="hidden" value="${requestScope.sums.totalmoney}" name="nowamount" />
 					 
                   <c:forEach items="${requestScope.products}" var="r">
  					<tr class="item-list">
@@ -244,7 +246,7 @@
 										<div class="td-inner">
 											<span class="phone-title">配送方式</span>
 											<div class="pay-logis">
-												快递<b class="sys_item_freprice">10</b>元
+												快递<b class="sys_item_freprice">0</b>元
 											</div>
 										</div>
 									</li>
@@ -425,7 +427,7 @@
 		</div>
 		<hr />
 
-		<div class="am-u-md-12" >
+		<div class="am-u-md-12" style="width: 650px!important;">
 			<form class="am-form am-form-horizontal f1" action="../User/insertaddr" method="post">
                 <input type="hidden" value="${requestScope.user.id}" name="user_id"/>
 				<div class="am-form-group">
@@ -488,6 +490,7 @@
 				$('#addr').text(dates[0].addr);
 				$('#name').text(dates[0].name);
 				$('#tel').text(dates[0].tel);
+				$('#addrid').val(dates[0].id);
 			},
 		});
 		
@@ -531,7 +534,7 @@
 					function(json) {
 						if (json.status > 0) {
 							alert("添加成功");
-							window.parent.location.reload();
+							window.location.reload();
 						} else {
 							alert(json.text);
 						}
@@ -542,7 +545,7 @@
 					function(json) {
 						if (json.status > 0) {
 							alert("添加成功");
-							window.parent.location.reload();
+							location.href="order.jsp";
 						} else {
 							alert(json.text);
 						}

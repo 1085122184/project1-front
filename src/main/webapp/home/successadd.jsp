@@ -88,7 +88,7 @@
 			<ul class="message-r">
 				<div class="topMessage home">
 					<div class="menu-hd">
-						<a href="../home/indexs" target="_top" class="h">商城首页</a>
+						<a href="../home/page" target="_top" class="h">商城首页</a>
 					</div>
 				</div>
 				<div class="topMessage my-shangcheng">
@@ -119,7 +119,7 @@
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>

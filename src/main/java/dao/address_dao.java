@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import entity.Address;
+import entity.Order;
 import entity.Type;
 
 @Repository
@@ -27,5 +28,8 @@ public interface address_dao {
 	public void insertaddr(Address addr);
 	@Select("select * from address where user_id=#{user_id} and status=1")
 	public List<Address> selectBystatus(Address addr);
+	
+	@Select("select * from address where id=#{address_id}")
+	public Order selectid(Order o);
 }
 

@@ -21,7 +21,23 @@ public class Product {
 	int collectcount;
 	int salecount;
 	String pics;
+	String pids;
+	int count;
 	
+	
+	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public String getPids() {
+		return pids;
+	}
+	public void setPids(String pids) {
+		this.pids = pids;
+	}
 	public String[] getPiclist() {
 		if(pics.length()<5)return new String[0];
 		return pics.split(",");

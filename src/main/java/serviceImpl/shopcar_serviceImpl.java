@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.shopcar_dao;
+import entity.Orderstatus;
 import entity.Shopcar;
 import service.shopcar_service;
 @Service
@@ -55,6 +56,19 @@ shopcar_dao dao;
 		dao.minus(sc);
 		
 	}
+	public List<Shopcar> counts(Shopcar sc) {
+		// TODO Auto-generated method stub
+		return dao.counts(sc);
+	}
+	public void dels(Orderstatus os) {
+		dao.dels(os);
+		
+	}
+	
+	
+	
+	
+
 	
 
 }

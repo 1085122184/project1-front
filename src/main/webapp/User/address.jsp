@@ -77,8 +77,8 @@
 				<div class="topMessage">
 					<div class="menu-hd">
 						<c:if test="${sessionScope.user==null}">
-							<a href="login.jsp" target="_top" class="h">亲，请登录</a>
-							<a href="register.jsp" target="_top">免费注册</a>
+							<a href="../home/login.jsp" target="_top" class="h">亲，请登录</a>
+							<a href="../home/register.jsp" target="_top">免费注册</a>
 						</c:if>
 						<c:if test="${sessionScope.user!=null}">
 							<a href="" target="_top" class="h">${sessionScope.user.email}</a>
@@ -91,7 +91,7 @@
 				<div class="topMessage home">
 					<div class="menu-hd">
 					<c:if test="${sessionScope.user!=null}">
-						<a href="../home/index" target="_top" class="h">商城首页</a>
+						<a href="../home/page" target="_top" class="h">商城首页</a>
 					</c:if>	
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="../home/myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>
@@ -210,7 +210,7 @@
 								</p>
 							</div>
 							<div class="new-addr-btn">
-								<a href="#"><i class="am-icon-edit"></i>编辑</a> <span
+								<!--<a href="#"><i class="am-icon-edit"></i>编辑</a>  --> <span
 									class="new-addr-bar">|</span> <a href="javascript:void(0);"
 									onclick="del(${r.id});"><i class="am-icon-trash"></i>删除</a>
 							</div>
@@ -330,38 +330,7 @@
 			</div>
 		</div>
 
-		<aside class="menu">
-			<ul>
-				<li class="person"><a href="index.html">个人中心</a></li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a></li>
-						<li><a href="safety.html">安全设置</a></li>
-						<li class="active"><a href="address.html">收货地址</a></li>
-					</ul></li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li><a href="order.html">订单管理</a></li>
-						<li><a href="change.html">退款售后</a></li>
-					</ul></li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a></li>
-						<li><a href="bonus.html">红包</a></li>
-						<li><a href="bill.html">账单明细</a></li>
-					</ul></li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a></li>
-						<li><a href="foot.html">足迹</a></li>
-						<li><a href="comment.html">评价</a></li>
-						<li><a href="news.html">消息</a></li>
-					</ul></li>
-
-			</ul>
-
-		</aside>
+		<jsp:include page="../basicjsp/Usermenu.jsp"></jsp:include>
 	</div>
 
 </body>

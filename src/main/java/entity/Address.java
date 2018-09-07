@@ -11,6 +11,7 @@ public class Address {
 	String name;
 	String tel;
 	int status;
+	
 	public static String[] statuss= {"设为默认","默认地址"};
 	public static String[] statuses= {"选择该地址","目前地址"};
 	

@@ -21,6 +21,7 @@ public class Shopcar {
 	String info;
     String ids;
     
+    
     double totalmoney;
     double oldtotalmoney;
     int  c;

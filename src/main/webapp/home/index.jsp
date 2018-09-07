@@ -85,7 +85,7 @@ strong {
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>
@@ -295,7 +295,7 @@ strong {
 
 			</div>
 			<div class="clear "></div>
-			<!--热门活动 -->
+			<!--热门活动 
 
 			<div class="am-container activity ">
 				<div class="shopTitle ">
@@ -351,7 +351,7 @@ strong {
 					</div>
 
 				</div>
-			</div>
+			</div>-->
 			<div class="clear "></div>
 
 
@@ -359,12 +359,9 @@ strong {
 				<!--甜点-->
 				<div class="am-container ">
 					<div class="shopTitle ">
-						<h4>甜品</h4>
-						<h3>每一道甜品都有一个故事</h3>
-						<div class="today-brands ">
-							<a href="# ">桂花糕</a> <a href="# ">奶皮酥</a> <a href="# ">栗子糕 </a> <a
-								href="# ">马卡龙</a> <a href="# ">铜锣烧</a> <a href="# ">豌豆黄</a>
-						</div>
+						<h4>商品列表</h4>
+						<h3>每一个产品都有一个故事</h3>
+						
 						<span class="more "> <a href="# ">更多美味<i
 								class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
 						</span>
@@ -438,7 +435,7 @@ strong {
 
 
 			<div id="f3">
-				<!--甜点-->
+				<!--甜点
 
 				<div class="am-container ">
 					<div class="shopTitle ">
@@ -532,7 +529,7 @@ strong {
 
 				</div>
 				<div class="clear "></div>
-			</div>
+			</div>-->
 			<jsp:include page="../basicjsp/basis_bottom.jsp" ></jsp:include>
 		</div>
 	</div>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import dao.address_dao;
 import dao.product_dao;
 import entity.Address;
+import entity.Order;
 import entity.Product;
 import entity.Type;
 import service.address_service;
@@ -43,6 +44,10 @@ address_dao dao;
 	public List<Address> selectBystatus(Address addr) {
 		// TODO Auto-generated method stub
 		return dao.selectBystatus(addr);
+	}
+	public Order selectid(Order o) {
+		// TODO Auto-generated method stub
+		return dao.selectid(o);
 	}
 
 }

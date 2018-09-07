@@ -6,11 +6,18 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import entity.Orderdatails;
 import entity.User;
 
 @Repository
 public interface orderdetails_dao {
-    @Insert("insert into user(email,password,level,amount,status) value(#{email},#{password},0,0,0)")
-	public void register(User u);
+    @Insert("insert into orders_details(orders_id,product_id,count,price,nowprice,comments) value(#{orders_id},#{pid},#{c},#{p},#{np},0)")
+    public void insert(Orderdatails ot);
    
+    @Select("SELECT @@IDENTITY AS 'Identity'")
+    public int selectIdentity();
+    
+
+    
+  
 }

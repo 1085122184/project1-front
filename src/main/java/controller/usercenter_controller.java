@@ -54,7 +54,7 @@ public class usercenter_controller {
     } 
     @RequestMapping("insertaddr")
     public @ResponseBody jsonInfo insertaddr(Address addr){
-    	addrservice.insertaddr(addr);;
+    	addrservice.insertaddr(addr);
     	return new  jsonInfo(1, "");
     } 
     

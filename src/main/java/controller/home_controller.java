@@ -23,7 +23,7 @@ public class home_controller {
     
     
     
-    @RequestMapping("indexs")
+    @RequestMapping("page")
 	public String select(ModelMap m) {
 		m.put("product",pservice.selectproduct());
 		m.put("type", tservice.selectall());

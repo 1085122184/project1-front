@@ -50,22 +50,19 @@ function del(id) {
 }
 function pay(id,user_id){
 		var ids=[];
-		var counts=[];
-		var nowprices=[];
-		var prices=[];
+		var pids=[];
+		
 			$(".son_check").each(function(){
 				if( $(this).prop("checked")){
 					ids.push($(this).attr("myid"));
-					counts.push($(this).attr("mycount"));
-					nowprices.push($(this).attr("mynowprice"));
-					prices.push($(this).attr("myprice"));
+					pids.push($(this).attr("myproduct_id"));
 				}
 			});	
 		if(ids.length==0){
-			alert("请选择行");
+			alert("请选择商品");
 			return ;
 		}
-		location.href="pay?id="+id+"&user_id="+user_id+"&ids="+ids+"&counts="+counts+"&nowprices="+nowprices+"&prices="+prices;
+		location.href="pay?id="+id+"&user_id="+user_id+"&ids="+ids+"&pids="+pids;
 }
 
 </script>
@@ -87,7 +84,7 @@ function pay(id,user_id){
         <ol>
             <li><a href="../User/index.jsp">${sessionScope.user.email}</a></li>
             <li><a href="off">退出登录</a></li>
-            <a href="order.html">我的订单</a>
+            <a href="myorder">我的订单</a>
         </ol>
         </c:if>
     </div>
@@ -135,7 +132,7 @@ function pay(id,user_id){
                <c:forEach items="${requestScope.shopcar}" var="r">
                 <ul class="order_lists" >
                     <li class="list_chk">
-                        <input type="checkbox" id="checkbox_${r.id}" class="son_check" myid="${r.id}" mycount="${r.count}" mynowprice="${r.nowprice}" myprice="${r.price}">
+                        <input type="checkbox" id="checkbox_${r.id}" class="son_check" myid="${r.id}" myproduct_id="${r.product_id}">
                         <label for="checkbox_${r.id}"></label>
                     </li>
                     <li class="list_con">
@@ -266,7 +263,7 @@ function pay(id,user_id){
                 <div style="margin:50px 0 0 500px;height: 300px">
                 <img src="../images/kk.png">
                  <li style="position:absolute;top:210px;left:620px;font-size: 14px">购物车空空的哦~，去看看心仪的商品吧~</li>
-                 <a style="position:absolute;top:240px;left:620px;color: blue;cursor: pointer;" onclick="javascript:goshopping(${requestScope.user_id.id})">去购物> </a>
+                 <a style="position:absolute;top:240px;left:620px;color: blue;cursor: pointer;" onclick="javascript:goshopping(${sessionScope.user.id})">去购物> </a>
                 </div>
 </c:if> 
 <!--页脚-->

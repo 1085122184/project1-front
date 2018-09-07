@@ -49,7 +49,7 @@
 				<div class="topMessage home">
 					<div class="menu-hd">
 					<c:if test="${sessionScope.user!=null}">
-						<a href="../home/index" target="_top" class="h">商城首页</a>
+						<a href="../home/page" target="_top" class="h">商城首页</a>
 					</c:if>	
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="topMessage favorite">
 					<div class="menu-hd">
-						<a href="" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+						<a href="myorder" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>我的订单</span></a>
 					</div>
 			</ul>
 		</div>
@@ -203,7 +203,7 @@
 								<div class="clear"></div>
 							</div>
 
-							<!--地址-->
+							<!--地址
 							<dl class="iteminfo_parameter freight">
 								<dt>配送至</dt>
 								<div class="iteminfo_freprice">
@@ -226,9 +226,10 @@
 									</div>
 								</div>
 							</dl>
+							-->
 							<div class="clear"></div>
 
-							<!--销量-->
+							<!--销量
 							<ul class="tm-ind-panel">
 								<li class="tm-ind-item tm-ind-sellCount canClick">
 									<div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
@@ -240,6 +241,7 @@
 									<div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
 								</li>
 							</ul>
+							-->
 							<div class="clear"></div>
 
 							<!--各种规格-->
@@ -283,7 +285,7 @@
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
 															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
-															<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+															
 														</dd>
 
 													</div>
@@ -300,7 +302,7 @@
 													</div>
 													<div class="text-info">
 														<span class="J_Price price-now">¥39.00</span>
-														<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+														
 													</div>
 												</div>
 
@@ -341,7 +343,12 @@
 							</div>
 							<li>
 								<div class="clearfix tb-btn tb-btn-buy theme-login">
-									<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+									<c:if test="${sessionScope.user!=null}">
+								    <a id="LikBasket" title="加入购物车" href="javascript:addcar(${sessionScope.user.id},${requestScope.list.id})"><i></i>立即购买</a>
+								   </c:if>
+								   <c:if test="${sessionScope.user==null}">
+									<a id="LikBasket" title="加入购物车" href="failedadd"><i></i>立即购买</a>
+								   </c:if>
 								</div>
 							</li>
 							<li>
